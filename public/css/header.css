@@ -1,0 +1,55 @@
+body {
+  margin:0 auto;
+}
+.header {
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #8B4513;
+  align-items: center;
+  margin: 0 auto;
+  height: 75px;
+  position: sticky;
+  width: 100%;
+  -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+ -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+ box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+ color: white;
+}
+.centro {
+  width: 20%;
+  text-align: center;
+}
+.centro img{
+  height: 60px;
+}
+.header-izq {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 20px;
+  width: 40%;
+  text-align: left;
+  color: white;
+}
+.header-izq a{
+  margin-left: 20px;
+  color: white;
+  text-decoration: none;
+}
+.header-der {
+  width: 40%;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  text-align: right;
+  margin-right: 60px;
+}
+.header-der a{
+  color: black;
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+}

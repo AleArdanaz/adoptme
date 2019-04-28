@@ -1,0 +1,114 @@
+body {
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  background-color:	white;
+}
+.content {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  font-family: 'Lato', sans-serif;
+
+}
+.inicio {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #E5E7E9;
+
+}
+.buscador {
+  padding-left: 40px;
+  width: 90%;
+}
+.input-busqueda {
+  width: 20%;
+  margin-right: 20px;
+}
+.boton-busqueda {
+  background-color: #8B4513;
+  margin-top: 10px;
+  height: 50px;
+  width: 15%;
+}
+.main-title {
+  font-size: 80px;
+  padding: 40px;
+}
+.perros {
+  padding-top: 30px;
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.novedades {
+  padding: 30px;
+  width: 30%;
+  text-align: center;
+}
+.post-perro {
+  padding: 20px;
+  border: 4px;
+  border-color: black;
+  border-radius: 3%;
+  border-style: solid;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+
+}
+.form-div {
+  width: 30%;
+}
+.post-perro label{
+  display: inline-block;
+  width: 85px;
+}
+.input-perro {
+  margin-bottom:8px;
+  width: 70%;
+}
+.boton{
+
+        font-family: 'Lato', sans-serif;
+        font-weight:bold;
+        color:white;
+        background:black;
+        border:0px;
+        height: 30px;
+       }
+
+
+.perro{
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  background-color: #E5E7E9;
+  padding: 15px;
+  width: 90%;
+  margin-bottom: 30px;
+}
+.datos-perro {
+  width: 30%;
+  margin-left: 3%;
+}
+.datos-perro img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+}
+
+.novedades {
+  width: 25%;
+
+}
+.post-nov {
+  border: 4px;
+  border-color: black;
+  border-radius: 3%;
+  border-style: solid;
+}
