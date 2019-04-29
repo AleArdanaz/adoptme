@@ -45,7 +45,7 @@
               </div>
               <div class="perros">
               @auth
-              <form class="post-perro" action="index.html" method="post">
+              <form class="post-perro" action="{{route('crear.perro')}}" method="post">
                 <div class="form-div">
                   <label for="nombre">Nombre</label>
                   <input class="input-perro" type="text" name="nombre" value="">
@@ -62,7 +62,7 @@
                 </div>
                 <div class="form-div">
                   <label for="img">Imagen:</label>
-                  <input class="input-perro" type="file" name="img" value="">
+                  <input accept="image/*" class="input-perro" type="file" name="img" value="">
                   <label for="">Contacto</label>
                   <textarea name="name" rows="4" cols="40" style="width:90%;"></textarea>
                 </div>

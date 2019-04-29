@@ -9,10 +9,10 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
     use Notifiable;
-    public function roles(){
-      return $this->belongsToMany('App\Role');
-    }
 
+    ublic function perro(){
+      return $this->hasMany('App\Perro');
+    }
     /**
      * The attributes that are mass assignable.
      *

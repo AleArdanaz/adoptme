@@ -84,7 +84,7 @@ body {
 
 
 .perro{
-  border-radius: 8px;
+  border-radius:8px;
   display: flex;
   flex-direction: row;
   background-color: #E5E7E9;
