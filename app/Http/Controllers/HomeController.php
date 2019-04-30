@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Perro;
+
 
 use Illuminate\Http\Request;
 
@@ -11,11 +13,6 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     /**
      * Show the application dashboard.
      *
@@ -23,6 +20,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $perros = Perro::orderBy('created_at', 'DESC')->get();
+        return view('welcome',['perros' => $perros]);
     }
 }
