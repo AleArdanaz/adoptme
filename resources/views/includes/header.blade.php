@@ -38,27 +38,32 @@
       <div class="header-der">
         @if (Route::has('login'))
         @auth
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:#E5E7E9;color:black;">
-            {{Auth::user()->name}}
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="{{ route('logout') }}" style="color:black;" onclick="event.preventDefault();document.getElementById('logout-form').submit()" >{{ __('Logout') }}
+
+            <a id="username" class="btn btn-secondary header-item" href="{{ route('logout') }}" style="color:Black;background-color:#E5E7E9;" onclick="event.preventDefault();document.getElementById('logout-form').submit()" onmouseover="mouseOver()" onmouseout="mouseOut()" > {{ Auth::user()->name}}</a>
               <form id="logout-form" action="{{ route('logout') }}" method="POST" >
                 @csrf
-              </form></a>
-            <a class="dropdown-item" href="#" style="color:black;">Another action</a>
-            <a class="dropdown-item" href="#" style="color:black;white-space: wrap;">Something else</a>
-          </div>
+              </form>
+
         </div>
         @else
-        <button type="button" class="btn btn-secondary" style="background-color:#E5E7E9;color:black;" name="button"><a href="{{ route('login') }}">Login/Register</a></button>
+        <button type="button" class="btn btn-secondary" style="background-color:#E5E7E9;color:black;margin-right:10px;" name="button" onclick="document.getElementById('modal-wrapper').style.display='block'">Login</button>
+        <button type="button" class="btn btn-secondary "style="background-color:#E5E7E9;color:black;" name="button"><a href="{{ route('register')}}">Register</a> </button>
 
         @endauth
-
         @endif
       </div>
     </div>
-
+    <script type="text/javascript">
+    @auth
+    function mouseOver() {
+      var header = document.getElementById('username');
+      header.innerHTML = "Logout";
+        }
+    function mouseOut() {
+        var header = document.getElementById('username');
+        header.innerHTML = "{{Auth::user()->name}}";
+          }
+      @endauth
+    </script>
   </body>
 </html>

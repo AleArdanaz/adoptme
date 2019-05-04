@@ -22,8 +22,9 @@ body {
   width: 90%;
 }
 .input-busqueda {
-  width: 20%;
+  width: 100%;
   margin-right: 20px;
+  height: 40px;
 }
 .boton-busqueda {
   background-color: #8B4513;

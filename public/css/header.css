@@ -46,10 +46,22 @@ body {
   flex-direction: row;
   justify-content: flex-end;
   text-align: right;
-  margin-right: 60px;
 }
 .header-der a{
+  width: 20%;
   color: black;
   text-decoration: none;
   font-family: 'Lato', sans-serif;
+}
+.header-item {
+  border: 1px;
+  border-style: solid;
+  text-align: center;
+  background-color: white;
+  border-radius: 2px;
+  -webkit-transition: opacity .5s ease-in-out;
+   -moz-transition: opacity .5s ease-in-out;
+   -ms-transition: opacity .5s ease-in-out;
+   -o-transition: opacity .5s ease-in-out;
+   transition: opacity .5s ease-in-out;
 }

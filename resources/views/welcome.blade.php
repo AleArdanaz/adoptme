@@ -16,6 +16,7 @@
     </head>
     <body>
       @include('includes/header')
+      @include('includes/login')
       <div class="inicio">
         <h1 class="main-title">AdoptMe</h1>
         <div class="buscador">
@@ -24,7 +25,7 @@
             <input type="text" class="form-control input-busqueda" name="" placeholder="Nombre">
             <input type="text" class="form-control input-busqueda" name="" value=""  placeholder="Raza">
             <input type="number" class="form-control input-busqueda" name="" value=""  placeholder="Edad">
-            <select class="form-control input-busqueda" name="tamaño" placeholder="Tamaño">
+            <select class="form-control input-busqueda" style="height:40px;" name="tamaño" placeholder="Tamaño">
               <option value="">Chico</option>
               <option value="">Mediano</option>
               <option value="">Grande</option>
@@ -67,7 +68,7 @@
                   <label for="comentarios" style="height:10%;">Comentarios</label>
                   <textarea name="comentarios" style="width:90%; height:250px;"></textarea>
                 </div>
-                <input class="boton" type="submit" name="" value="Buscar hogar!">
+                <input class="btn btn-secondary" type="submit" name="" value="Buscar hogar!">
               </form>
               @include('includes/errores')
               @endauth
@@ -92,5 +93,6 @@
               </div>
               @endforeach
             </div>
+          </div>
     </body>
 </html>

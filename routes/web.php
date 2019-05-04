@@ -15,3 +15,4 @@
 Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 Route::post('/crearperro', 'PerroController@store')->name('crear.perro');
+Route::post('/buscarperro', 'PerroController@buscar')->name('buscar.perro');
