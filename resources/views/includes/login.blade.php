@@ -138,7 +138,7 @@
             </span>
             @enderror
             <div class="" style="width:100%;margin-top:20px;align-items:center;text-align:center;">
-            @if ($errors->any())
+            @if ($errors->has('email') or $errors->has('password'))
             <script type="text/javascript">
                 var modal = document.getElementById('modal-wrapper');
                 modal.style.display='block';

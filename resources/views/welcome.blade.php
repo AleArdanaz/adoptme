@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="/css/home.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
         <title>Laravel</title>
 
@@ -20,18 +21,12 @@
       <div class="inicio">
         <h1 class="main-title">AdoptMe</h1>
         <div class="buscador">
-          <h3>Buscador</h3>
+          <h3 style="width:100%;font-size:2rem;">Buscador</h3>
           <div class="" style="display:flex;flex-direction:row;">
-            <input type="text" class="form-control input-busqueda" name="" placeholder="Nombre">
-            <input type="text" class="form-control input-busqueda" name="" value=""  placeholder="Raza">
-            <input type="number" class="form-control input-busqueda" name="" value=""  placeholder="Edad">
-            <select class="form-control input-busqueda" style="height:40px;" name="tamaño" placeholder="Tamaño">
-              <option value="">Chico</option>
-              <option value="">Mediano</option>
-              <option value="">Grande</option>
-            </select>
+            <input type="text" class=" input-busqueda" name="" placeholder="Buscar usuarios,perros,razas y mas">
+
           </div>
-          <div class="" style="width:100%;align-items:center;display:flex;justify-content:center;">
+          <div class="" style="width:100%;align-items:center;display:flex;">
             <button type="submit" class="boton-busqueda btn btn-primary" name="button">Buscar</button>
           </div>
         </div>
@@ -68,13 +63,18 @@
                   <label for="comentarios" style="height:10%;">Comentarios</label>
                   <textarea name="comentarios" style="width:90%; height:250px;"></textarea>
                 </div>
-                <input class="btn btn-secondary" type="submit" name="" value="Buscar hogar!">
+                <input class="btn btn-secondary boton-busqueda" type="submit" name="" value="Publicar :)">
               </form>
               @include('includes/errores')
               @endauth
               @foreach($perros as $perro)
               <div class="perro">
-
+                  @if(Auth::user() == $perro->user)
+                <div class="">
+                    <a href="{{route('borrar.perro' , $perro->id)}}" style="padding-left:10px;"><i class="far fa-trash-alt"></i></a>
+                  </form>
+                </div>
+                @endif
                 <div class="datos-perro">
                   <h2>{{$perro->name}}</h2>
                   <p>{{$perro->edad}} meses de edad</p>

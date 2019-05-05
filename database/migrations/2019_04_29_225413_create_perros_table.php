@@ -15,6 +15,7 @@ class CreatePerrosTable extends Migration
     {
         Schema::create('perros', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('user_id');
             $table->string('name');
             $table->string('raza');
             $table->string('tamaño');

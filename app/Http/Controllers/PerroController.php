@@ -16,7 +16,7 @@ class PerroController extends Controller
       'name' => ['required','string','max:30'],
       'raza' => ['required','string','max:30'],
       'tamaño' => ['required','string','max:30'],
-      'edad' => ['required','integer','max:10'],
+      'edad' => ['required','integer','max:100'],
       'img' => ['required'],
       'contacto' => ['required','string','max:150'],
       'comentarios' => ['required','string','max:300'],
@@ -24,6 +24,7 @@ class PerroController extends Controller
 
 
       $perro = new Perro;
+      $perro->user_id = Auth::user()->id;
       $perro->name = $request->name;
       $perro->raza = $request->raza;
       $perro->edad = $request->edad;
@@ -38,4 +39,20 @@ class PerroController extends Controller
 
       return redirect()->back();
     }
-}
+
+    public function borrar($perro_id){
+      $perro = Perro::where('id' , $perro_id)->first();
+      if ($perro) {
+        if (Auth::user() != $perro->user) {
+              return redirect('/');
+            }
+              else {
+                  $perro->delete();
+                  return redirect()->back();
+      }
+    }
+     else {
+       return "Que haces loquillo?";
+    }
+    }
+  }

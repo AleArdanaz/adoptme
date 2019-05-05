@@ -14,9 +14,6 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
 
@@ -24,6 +21,7 @@
 </head>
   </head>
   <body>
+
     <div class="header">
       <div class="header-izq">
           <h3>AdpotMe</h3>
@@ -36,34 +34,32 @@
         <img src="imgs/21645.png" alt="" class="img-header">
       </div>
       <div class="header-der">
-        @if (Route::has('login'))
         @auth
-
-            <a id="username" class="btn btn-secondary header-item" href="{{ route('logout') }}" style="color:Black;background-color:#E5E7E9;" onclick="event.preventDefault();document.getElementById('logout-form').submit()" onmouseover="mouseOver()" onmouseout="mouseOut()" > {{ Auth::user()->name}}</a>
-              <form id="logout-form" action="{{ route('logout') }}" method="POST" >
-                @csrf
-              </form>
-
+        <div class="dropdown">
+          <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{ Auth::user()->name}}
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">My Profile</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit()">Logout</a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+              @csrf
+            </form>
+          </div>
         </div>
-        @else
-        <button type="button" class="btn btn-secondary" style="background-color:#E5E7E9;color:black;margin-right:10px;" name="button" onclick="document.getElementById('modal-wrapper').style.display='block'">Login</button>
-        <button type="button" class="btn btn-secondary "style="background-color:#E5E7E9;color:black;" name="button"><a href="{{ route('register')}}">Register</a> </button>
+        </div>
 
         @endauth
+
+        @if (Route::has('login'))
+
+        @guest
+        <button type="button" class="btn btn-secondary" style="background-color:#E5E7E9;color:black;margin-right:10px;" name="button" onclick="document.getElementById('modal-wrapper').style.display='block'">Login</button>
+        <button type="button" class="btn btn-secondary "style="background-color:#E5E7E9;color:black;" name="button"><a href="{{ route('register')}}">Register</a> </button>
+        @endguest
         @endif
       </div>
     </div>
-    <script type="text/javascript">
-    @auth
-    function mouseOver() {
-      var header = document.getElementById('username');
-      header.innerHTML = "Logout";
-        }
-    function mouseOut() {
-        var header = document.getElementById('username');
-        header.innerHTML = "{{Auth::user()->name}}";
-          }
-      @endauth
-    </script>
   </body>
 </html>

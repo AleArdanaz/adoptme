@@ -22,14 +22,24 @@ body {
   width: 90%;
 }
 .input-busqueda {
-  width: 100%;
+  display: block;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  width: 70%;
   margin-right: 20px;
   height: 40px;
 }
 .boton-busqueda {
   background-color: #8B4513;
   margin-top: 10px;
-  height: 50px;
+  height: 40px;
   width: 15%;
 }
 .main-title {
@@ -38,7 +48,7 @@ body {
 }
 .perros {
   padding-top: 30px;
-  width: 70%;
+  width: 75%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -46,7 +56,7 @@ body {
 }
 .novedades {
   padding: 30px;
-  width: 30%;
+  width: 25%;
   text-align: center;
 }
 .post-perro {
@@ -102,10 +112,6 @@ body {
   height: 70%;
 }
 
-.novedades {
-  width: 25%;
-
-}
 .post-nov {
   border: 4px;
   border-color: black;
