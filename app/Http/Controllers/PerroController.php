@@ -19,7 +19,7 @@ class PerroController extends Controller
       'edad' => ['required','integer','max:100'],
       'img' => ['required'],
       'contacto' => ['required','string','max:150'],
-      'comentarios' => ['required','string','max:300'],
+      'comentarios' => ['required','string','max:1000'],
       ]);
 
 

@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->boolean('admin')->default(false);
+            $table->text('bio')->nullable('Cambia tu biografia!');
             $table->rememberToken();
             $table->timestamps();
         });

@@ -1,23 +1,7 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/css/home.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
-        <!-- Styles -->
-    </head>
     <body>
       @include('includes/header')
-      @include('includes/login')
       <div class="inicio">
         <h1 class="main-title">AdoptMe</h1>
         <div class="buscador">
@@ -49,7 +33,7 @@
                   <label for="tamaño">Tamaño</label>
                   <input type="text" class="input-perro" name="tamaño" value="">
                   <label for="edad">Edad </label>
-                  <input class="input-perro" type="number" name="edad" value="" min="1" max="20">
+                  <input class="input-perro" type="number" name="edad" value="" min="1" max="300">
                   <label for="raza">Raza</label>
                   <input class="input-perro" type="text" name="raza" value="">
                 </div>
@@ -77,10 +61,10 @@
                 @endif
                 <div class="datos-perro">
                   <h2>{{$perro->name}}</h2>
-                  <p>{{$perro->edad}} meses de edad</p>
-                  <p>{{$perro->tamaño}}</p>
-                  <p>{{$perro->raza}}</p>
-                  <p>{{$perro->contacto}}</p>
+                  <p><strong>Edad:</strong>{{$perro->edad}} meses de edad</p>
+                  <p><strong>Tamaño:</strong>{{$perro->tamaño}}</p>
+                  <p><strong>Raza:</strong>{{$perro->raza}}</p>
+                  <p><strong>Contacto:</strong>{{$perro->contacto}}</p>
                   <p>Publicado por <a href="#">{{$perro->owner}}</a> {{$perro->created_at}}</p>
                 </div>
                 <div class="datos-perro">
@@ -88,7 +72,7 @@
                   <p>{{$perro->comentarios}}</p>
                 </div>
                 <div class="datos-perro">
-                  <img class="img-perro" src="imgs/{{$perro->img}}" alt="">
+                  <img class="img-perro" src="{{ asset('imgs/' . $perro->img) }}" alt="">
                 </div>
               </div>
               @endforeach

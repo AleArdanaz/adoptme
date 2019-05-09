@@ -17,3 +17,5 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::post('/crearperro', 'PerroController@store')->name('crear.perro');
 Route::post('/buscarperro', 'PerroController@buscar')->name('buscar.perro');
 Route::get('/borrarperro/{perro_id}','PerroController@borrar')->name('borrar.perro');
+Route::get('/profile/{user_id}', 'UserController@index')->name('profile.user');
+Route::post('/editbio' , 'UserController@bio')->name('edit.bio');

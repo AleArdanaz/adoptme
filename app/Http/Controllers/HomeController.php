@@ -20,7 +20,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $perros = Perro::orderBy('created_at', 'DESC')->get();
+        $perros = Perro::orderBy('created_at', 'DESC')->paginate();
         return view('welcome',['perros' => $perros]);
     }
 }
