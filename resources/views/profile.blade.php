@@ -70,12 +70,13 @@
       <p>{{$perro->comentarios}}</p>
     </div>
     <div class="datos-perro">
-      <img class="img-perro" src="{{ asset('imgs/' . $perro->img) }}" alt="">
+    
     </div>
   </div>
   @endforeach
 </div>
 </div>
+<img class="img-perro" src="{{ asset('perrosimg/' . $perro->img) }}" alt="">
 <script type="text/javascript">
 
 </script>

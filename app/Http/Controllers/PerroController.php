@@ -28,9 +28,16 @@ class PerroController extends Controller
       $perro->name = $request->name;
       $perro->raza = $request->raza;
       $perro->edad = $request->edad;
-      $image = $request->file('img');
-      $image->move('imgs', $image->getClientOriginalName());
-      $perro->img = $image->getClientOriginalName();
+      if ($request->hasFile('img')) {
+        $imgs = [];
+        foreach ($request->file('img') as $image) {
+          $destinationPath = 'perrosimg/';
+          $filename = $image->getClientOriginalName();
+          $image->move($destinationPath, $filename);
+          array_push($imgs,$filename);
+        }
+        $perro->img = json_encode($imgs);
+      }
       $perro->tamaño = $request->tamaño;
       $perro->contacto = $request->contacto;
       $perro->owner = Auth::user()->name;

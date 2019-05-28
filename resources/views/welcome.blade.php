@@ -39,7 +39,7 @@
                 </div>
                 <div class="form-div">
                   <label for="img">Imagen:</label>
-                  <input accept="image/*" class="input-perro"  style="width:85%;" type="file" name="img" value="">
+                  <input accept="image/*" class="input-perro" multiple style="width:85%;" type="file" name="img[]" value="">
                   <label for="contacto">Contacto</label>
                   <textarea name="contacto" rows="4" cols="40" style="width:90%;"></textarea>
                 </div>
@@ -72,11 +72,21 @@
                   <p>{{$perro->comentarios}}</p>
                 </div>
                 <div class="datos-perro">
-                  <img class="img-perro" src="{{ asset('imgs/' . $perro->img) }}" alt="">
+                  @if (is_array(json_decode($perro->img,true)) || is_object(json_decode($perro->img,true)))
+                                @foreach (json_decode($perro->img,true) as $img)
+                                <div class="carousel-item active">
+                                  <img src="{{asset('perrosimg/'. $img )}}" alt="">
+                                </div>
+                                @endforeach
+                    @endif
+                    </div>
                 </div>
-              </div>
-              @endforeach
+            @endforeach
             </div>
-          </div>
+        </div>
+        <script type="text/javascript">
+          $('.carousel').carousel()
+
+        </script>
     </body>
 </html>
