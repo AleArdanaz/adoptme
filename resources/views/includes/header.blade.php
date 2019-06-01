@@ -46,7 +46,7 @@
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item" href="{{route('profile.user', Auth::user()->id )}}">My Profile</a>
-            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="{{route('control')}}">Pendientes</a>
             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit()">Logout</a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" >
               @csrf
@@ -60,50 +60,10 @@
         @if (Route::has('login'))
 
         @guest
-        <button type="button" class="btn btn-secondary" style="background-color:#E5E7E9;color:black;margin-right:10px;" name="button" onclick="document.getElementById('modal-wrapper').style.display='block'">Login</button>
-        <button type="button" class="btn btn-secondary "style="background-color:#E5E7E9;color:black;" name="button"><a href="{{ route('register')}}">Register</a> </button>
+        <button type="button" class="btn btn-secondary "style="background-color:#E5E7E9;color:black;" name="button"><a href="">Dar en adopcion!</a> </button>
         @endguest
+
         @endif
-        <div id="modal-wrapper" class="modal">
-
-          <form class="modal-content animate" method="POST" action="{{route('login')}}" style="width:30%;">
-            @csrf
-            <div class="imgcontainer">
-              <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
-              <img src="imgs/21645.png" alt="Avatar" class="avatar">
-              <h1 style="text-align:center;color:black;">Iniciar sesion</h1>
-            </div>
-
-            <div class="container">
-              <input id="email-login" class="form-control input-login @error('email') is-invalid @enderror" type="text" placeholder="Email" name="email" value="{{ old('email') }}" required>
-              @error('email')
-              <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-              </span>
-              @enderror
-              <input id="password-login" type="password" class="form-control input-login @error('password') is-invalid @enderror" placeholder="Enter Password" name="password">
-              @error('password')
-              <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-              </span>
-              @enderror
-              <div class="" style="width:100%;margin-top:20px;align-items:center;text-align:center;">
-              @if ($errors->has('email') or $errors->has('password'))
-              <script type="text/javascript">
-                  var modal = document.getElementById('modal-wrapper');
-                  modal.style.display='block';
-                  modal.style.animation='none';
-              </script>
-              @endif
-                <button type="submit" class="btn btn-primary">Login</button>
-              </div>
-              <div class="parte-inferior">
-                <a href="#" style="">Forgot Password ?</a>
-              </div>
-            </div>
-
-          </form>
-      </div>
       <script>
       // If user clicks anywhere outside of the modal, Modal will close
 

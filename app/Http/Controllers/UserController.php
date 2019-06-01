@@ -24,4 +24,14 @@ class UserController extends Controller
       return redirect()->back();
     }
 
+    public function admin(){
+
+      return view('login');
+    }
+    public function control(){
+      $perros = Perro::where('publicado', false)->orderBy('created_at', 'DESC')->get();
+      
+      return view('control',['perros' => $perros]);
+    }
+
     }

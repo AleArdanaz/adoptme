@@ -37,12 +37,6 @@ body {
   margin-right: 20px;
   height: 40px;
 }
-.boton-busqueda {
-  background-color: #8B4513;
-  margin-top: 10px;
-  height: 40px;
-  width: 15%;
-}
 .main-title {
   font-size: 80px;
   padding: 40px;
@@ -73,8 +67,8 @@ body {
   margin-bottom: 20px;
 
 }
-.form-div {
-  width: 30%;
+.enviarperro input {
+ width: 100%;
 }
 .post-perro label{
   display: inline-block;
@@ -97,20 +91,30 @@ body {
 
 .perro{
   border-radius:8px;
-  display: flex;
-  flex-direction: row;
   background-color: #E5E7E9;
   padding: 15px;
   width: 90%;
   margin-bottom: 30px;
 }
+.arriba-perro{
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+}
 .datos-perro {
-  width: 33%;
+  width: 45%;
   margin-left: 3%;
 }
-.datos-perro img {
+.imagenes-perro {
   width: 100%;
-  height: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+}
+.imagenes-perro img {
+  height: 180px;
+  border-radius: 3px;
 }
 
 .post-nov {
@@ -118,4 +122,50 @@ body {
   border-color: black;
   border-radius: 3%;
   border-style: solid;
+}
+/* The Modal (background) */
+.modal {
+display:none;
+position: fixed;
+z-index: 1;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+overflow: auto;
+background-color: rgba(0,0,0,0.4);
+}
+
+/* Modal Content Box */
+.modal-contentt {
+padding: 50px;
+background-color: #fefefe;
+margin: 0 auto;
+margin-top: 50px;
+height: 90%;
+border: 1px solid #888;
+width: 25%;
+}
+
+/* The Close Button (x) */
+.close {
+
+right: 25px;
+top: 0;
+color: #000;
+font-size: 35px;
+font-weight: bold;
+}
+.close:hover,.close:focus {
+color: red;
+cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+animation: zoom 0.6s
+}
+@keyframes zoom {
+from {transform: scale(0)}
+to {transform: scale(1)}
 }

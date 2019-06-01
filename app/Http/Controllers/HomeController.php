@@ -20,7 +20,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $perros = Perro::orderBy('created_at', 'DESC')->paginate();
-        return view('welcome',['perros' => $perros]);
+        $perros = Perro::where('publicado', true)->orderBy('created_at' , 'DESC')->GET();
+        $fotos = array();
+        foreach ($perros as $perro) {
+          $fotos = json_decode($perro->img,true);
+        }
+        return view('welcome',['perros' => $perros,'fotos' => $fotos]);
     }
 }
