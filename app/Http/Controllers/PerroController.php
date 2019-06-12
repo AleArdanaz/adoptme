@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Perro;
 use App\User;
+use App\Imagen;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 
@@ -27,24 +28,42 @@ class PerroController extends Controller
       $perro->name = $request->name;
       $perro->raza = $request->raza;
       $perro->edad = $request->edad;
-      if ($request->hasFile('img')) {
-        $imgs = [];
-        foreach ($request->file('img') as $image) {
-          $destinationPath = 'perrosimg/';
-          $filename = $image->getClientOriginalName();
-          $image->move($destinationPath, $filename);
-          array_push($imgs,$filename);
-        }
-        $perro->img = json_encode($imgs);
-      }
       $perro->tamaño = $request->tamaño;
       $perro->contacto = $request->contacto;
       $perro->comentarios = $request->comentarios;
       $perro->publicado = false;
-      $perro->save();
-
-      return redirect()->back();
+      $perro->sexo = $request->sexo;
+      //if ($request->file('img')) {
+      ////  $ima = $request->file('img');
+        //array_pop($ima);
+      //  if ($ima) {
+        //  $destinationPath = 'perrosimg/';
+      //    $filename = array_pop($ima)->getClientOriginalName();
+      //    array_pop($ima)->move($destinationPath, $filename);
+      //    $perro->img = $filename;
+      //  }
+    //
+    $re = $request->file('img');
+    $atr = array_pop($re);
+    $perro->img = $atr->getClientOriginalName();
+    $perro->save();
+    if ($request->hasFile('img')) {
+      foreach ($request->file('img') as $image) {
+        $img = new Imagen;
+        $destinationPath = 'perrosimg/';
+        $filename = $image->getClientOriginalName();
+        $img->ruta = $filename;
+        $img->perro_id = $perro->id;
+        $img->save();
+        $image->move( $destinationPath, $filename);
+      }
     }
+
+
+
+      return redirect('/');
+    }
+
 
     public function borrar($perro_id){
       $perro = Perro::where('id' , $perro_id)->first();

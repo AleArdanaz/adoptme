@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Imagen;
 use App\Perro;
 
 
@@ -21,10 +22,11 @@ class HomeController extends Controller
     public function index()
     {
         $perros = Perro::where('publicado', true)->orderBy('created_at' , 'DESC')->GET();
-        $fotos = array();
-        foreach ($perros as $perro) {
-          $fotos = json_decode($perro->img,true);
-        }
-        return view('welcome',['perros' => $perros,'fotos' => $fotos]);
+
+        return view('home',['perros' => $perros]);
+    }
+
+    public function adopcion() {
+      return view('adopcion');
     }
 }

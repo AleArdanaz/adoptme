@@ -21,9 +21,10 @@ class CreatePerrosTable extends Migration
             $table->integer('edad');
             $table->text('contacto');
             $table->text('comentarios');
-            $table->string('img')->null();
             $table->boolean('publicado');
+            $table->string('img');
             $table->timestamps();
+            $table->string('sexo');
         });
     }
 

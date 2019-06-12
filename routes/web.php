@@ -22,3 +22,5 @@ Route::post('/editbio' , 'UserController@bio')->name('edit.bio');
 Route::get('/admin', 'UserController@admin');
 Route::get('/control' ,'UserController@control')->name('control');
 Route::post('/publicar/{perro_id}', 'PerroController@publicar')->name('publicar');
+Route::post('/imagenperro', "ImagenController@store")->name('imagenes.perro');
+Route::get('/adopcion', 'HomeController@adopcion')->name('adopcion');

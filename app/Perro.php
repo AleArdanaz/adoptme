@@ -10,4 +10,8 @@ class Perro extends Model
     public function user(){
       return $this->belongsTo('App\User');
     }
+
+    public function imagen(){
+      return $this->hasMany('App\Imagen');
+    }
 }
