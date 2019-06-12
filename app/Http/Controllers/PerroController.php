@@ -67,6 +67,10 @@ class PerroController extends Controller
 
     public function borrar($perro_id){
       $perro = Perro::where('id' , $perro_id)->first();
+      $imgs = Imagen::where('perro_id', $perro_id)->get();
+      foreach ($imgs as $img) {
+        $img->delete();
+      }
       $perro->delete();
       return redirect('/');
     }
@@ -79,5 +83,13 @@ class PerroController extends Controller
       return redirect('/');
     }
 
+
+
+    public function profile($perro_id){
+      $perro = Perro::where('id', $perro_id)->first();
+      $imgs = Imagen::where('perro_id', $perro_id)->get();
+      $perrosT = Perro::where('tamaño', $perro->tamaño)->get();
+      return view('perro',['perro' => $perro, 'perrosT' => $perrosT, 'imgs' => $imgs]);
+    }
 
   }

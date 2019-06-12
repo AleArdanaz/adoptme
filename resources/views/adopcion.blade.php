@@ -27,9 +27,9 @@
           <option>Grande</option>
           <option>Incierto</option>
         </select>
-        <label for="edad">Edad </label>
+        <label for="edad">Edad (Meses)</label>
         <input class="input-perro form-control" type="number" name="edad" value="" min="1" max="300">
-        <label for="raza">Raza</label>
+        <label for="raza">Raza (Puede ser desconocida)</label>
         <input class="input-perro form-control" type="text" name="raza" value="">
       </div>
       <div class="form-div">

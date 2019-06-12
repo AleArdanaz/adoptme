@@ -1,0 +1,26 @@
+.all {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  padding: 20px;
+}
+.der {
+  text-align: center;
+  width: 25%;
+}
+.izq {
+  width: 75%;
+}
+.perrosT{
+  height: 30%;
+  border-radius:8px;
+  background-color: #E5E7E9;
+  padding: 5px;
+  width: 100%;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  cursor: pointer;
+}

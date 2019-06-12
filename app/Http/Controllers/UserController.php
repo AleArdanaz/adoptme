@@ -26,12 +26,15 @@ class UserController extends Controller
 
     public function admin(){
 
-      return view('login');
+      return view('auth/login');
     }
     public function control(){
       $perros = Perro::where('publicado', false)->orderBy('created_at', 'DESC')->get();
-      
-      return view('control',['perros' => $perros]);
+      if (Auth::user()) {
+        return view('control',['perros' => $perros]);
+      } else {
+        return redirect('/');
+      }
     }
 
     }

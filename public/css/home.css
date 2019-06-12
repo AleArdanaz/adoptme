@@ -20,7 +20,7 @@ body {
 .buscador {
   padding-left: 40px;
   padding-right: 40px;
-  width: 90%;
+  width: 80%;
 }
 .input-busqueda {
   display: block;
@@ -47,8 +47,10 @@ body {
   padding: 30px;
   margin: 0 auto;
   align-items: center;
-  flex-direction: column;
-  display: inline-flex;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .novedades {
@@ -76,27 +78,43 @@ body {
   height: 30%;
   border-radius:8px;
   background-color: #E5E7E9;
-  padding: 15px;
-  width: 40%;
+  padding: 5px;
+  width: 35%;
   margin-bottom: 30px;
   display: flex;
   justify-content: space-around;
   flex-direction: row;
+  cursor: pointer;
+}
+.perro a{
+  text-decoration: none;
+  padding: 5px;
+  color: white;
 }
 .img-perro {
-  width: 200px;
+  width: 100%;
   height: 200px;
+  border-radius: 3px;
 }
 .parte-izq {
   width: 45%;
-  padding: 10px;
+  padding: 5px;
 }
 .parte-der {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  padding-right: : 10px;
   width: 45%;
+}
+.atributos{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  text-align: center;
+}
+.parte-der label {
+  display: inline-block;
+  width: 55%;
 }
 .post-nov {
   border: 4px;

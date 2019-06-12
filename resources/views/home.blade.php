@@ -36,6 +36,7 @@
               @foreach($perros as $perro)
 
                 <div class="perro">
+
                   <div class="parte-izq">
                     @auth
                     <form class="" action="{{route('borrar.perro' , $perro->id)}}" method="post">
@@ -43,13 +44,18 @@
                       <button type="submit" style="padding-left:10px;"><i class="far fa-trash-alt"></i></button>
                     </form>
                     @endauth
-                    <img src="perrosimg/{{$perro->img}}" class="img-perro" alt="">
+                    <img src="{{ asset( 'perrosimg/' . $perro->img)}}" class="img-perro" alt="">
                   </div>
                   <div class="parte-der">
                     <h2>{{$perro->name}}</h2>
-                    <p>{{$perro->tamaño}}</p>
-                    <p>{{$perro->raza}}</p>
-                    <p>{{$perro->edad}}</p>
+                    <div class="atributos">
+                      <label for="tamaño">Tamaño:</label> <p name="tamaño"><strong>{{$perro->tamaño}}</strong></p>
+                      <label for="raza">Raza:</label><p name="raza"><strong>{{$perro->raza}}</strong></p>
+                      <label for="edad">Edad:</label><p name="edad"><strong>{{$perro->edad}} meses</strong></p>
+                    </div>
+                    <div class="ancla">
+                      <a class="btn btn-primary" href="{{route('profile.perro', $perro->id)}}">Ver mas!</a>
+                    </div>
                   </div>
                 </div>
 

@@ -1,3 +1,4 @@
+
 @auth
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -8,9 +9,6 @@
   <body>
     @include('includes/header')
     <div class="perros">
-    @auth
-
-    @endauth
     @foreach($perros as $perro)
     <div class="perro">
         @auth

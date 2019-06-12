@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="{{asset('css/home.css')}}">
     <link rel="stylesheet" href="{{asset('css/login.css')}}">
     <link rel="stylesheet" href="{{asset('css/adopcion.css')}}">
+    <link rel="stylesheet" href="{{asset('css/perro.css')}}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Laravel</title>
 
@@ -44,7 +45,7 @@
             {{ Auth::user()->name}}
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="{{route('profile.user', Auth::user()->id )}}">My Profile</a>
+            <a class="dropdown-item" href="">My Profile</a>
             <a class="dropdown-item" href="{{route('control')}}">Pendientes</a>
             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit()">Logout</a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" >
