@@ -8,9 +8,29 @@
 .der {
   text-align: center;
   width: 25%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.nombre-c {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.p-inicio {
+  font-size: 25px;
+  margin: 0 auto;
 }
 .izq {
   width: 75%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 90vh;
+  padding: 30px;
 }
 .perrosT{
   height: 30%;
@@ -20,7 +40,45 @@
   width: 100%;
   margin-bottom: 30px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   flex-direction: row;
   cursor: pointer;
+}
+ .imagenes-perro {
+   text-align: center;
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: space-around;
+ }
+.imgs {
+  width: 300px;
+  height: 300px;
+  border-radius: 3%;
+  transition: 750ms ease;
+  border-style: solid;
+  border-color: black;
+}
+.imgs:hover {
+  -ms-transform: scale(1.2); /* IE 9 */
+  -webkit-transform: scale(1.2); /* Safari 3-8 */
+   transform: scale(1.2);
+}
+.jeje {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.comentarios {
+  justify-content: center;
+  text-align: center;
+  align-items:center;
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }

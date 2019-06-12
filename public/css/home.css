@@ -14,13 +14,13 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
+  flex-wrap: wrap;
   background-color: #E5E7E9;
 
 }
 .buscador {
   padding-left: 40px;
   padding-right: 40px;
-  width: 80%;
 }
 .input-busqueda {
   display: block;
@@ -41,8 +41,23 @@ body {
   font-size: 80px;
   padding: 40px;
 }
+.miboton {
+  color: white;
+  text-decoration: none;
+  background-color: #5A6DE6;
+  border-radius: 3px;
+  padding: 10px;
+  border-color: #9A4E0C;
+  transition: 500ms ease;
+  max-width: 100%;
+}
+.miboton:hover {
+  text-decoration: none;
+  color: white;
+  background-color: #213BE6;
+}
 .perros {
-  width: 100%;
+  width: 75%;
   height: 100%;
   padding: 30px;
   margin: 0 auto;
@@ -79,31 +94,33 @@ body {
   border-radius:8px;
   background-color: #E5E7E9;
   padding: 5px;
-  width: 35%;
+  width: 100%;
   margin-bottom: 30px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   flex-direction: row;
-  cursor: pointer;
 }
-.perro a{
-  text-decoration: none;
-  padding: 5px;
-  color: white;
+.ancla{
+  margin-top: 10px;
 }
 .img-perro {
-  width: 100%;
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 80%;
   height: 200px;
   border-radius: 3px;
 }
 .parte-izq {
-  width: 45%;
+  max-width: 55%;
   padding: 5px;
 }
 .parte-der {
   display: flex;
   flex-direction: column;
-  padding-right: : 10px;
+  flex-wrap: wrap;
+  padding-right: : 5px;
   width: 45%;
 }
 .atributos{

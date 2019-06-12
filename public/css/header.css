@@ -5,6 +5,7 @@ body {
   font-family: 'Lato', sans-serif;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   background-color: #8B4513;
   align-items: center;
@@ -26,6 +27,7 @@ body {
 }
 .header-izq {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;

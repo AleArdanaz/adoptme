@@ -3,14 +3,42 @@
 </head>
 <body>
   @include('includes/header')
+  <div class="inicio">
+    <h1 class="main-title">  {{$perro->name}}</h1>
+    <div class="nombre-c">
+        <div class="">
+          <p class="p-inicio">Tamaño:<strong> {{$perro->tamaño}}</strong></p>
+        </div>
+        <div class="">
+          <p class="p-inicio">Sexo:<strong> {{$perro->sexo}}</strong></p>
+        </div>
+        <div class="">
+          <p class="p-inicio">Edad:<strong> {{$perro->edad}} meses</strong></p>
+        </div>
+        <div class="">
+          <p class="p-inicio">Raza:<strong> {{$perro->raza}} </strong></p>
+        </div>
+    </div>
+  </div>
 <div class="all">
-
   <div class="izq">
+    <div class="imagenes-perro">
+      @foreach ($imgs as $img)
 
+      <img src="{{ asset( 'perrosimg/' . $img->ruta)}}" class="imgs" alt="">
 
-    <div class="">
-      <img src="perrosimg/{{ asset('perrosimg/pelo.jpg') }}}" alt="">
-      {{$perro->name}}
+      @endforeach
+    </div>
+    <div class="jeje">
+      <div class="comentarios">
+        <h2>Comentarios:</h2>
+        <h4>{{$perro->comentarios}}</h4>
+      </div>
+
+      <div class="contacto">
+        <h2>Contacto:</h2>
+        <h4>{{$perro->contacto}}</h4>
+      </div>
     </div>
   </div>
 
@@ -48,7 +76,7 @@
           <label for="edad">Edad:</label><p name="edad"><strong>{{$perro->edad}} meses</strong></p>
         </div>
         <div class="ancla">
-          <a class="btn btn-primary" href="{{route('profile.perro', $perro->id)}}">Ver mas!</a>
+          <a class="miboton" href="{{route('profile.perro', $perro->id)}}">Ver mas!</a>
         </div>
       </div>
     </div>
