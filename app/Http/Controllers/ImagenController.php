@@ -17,7 +17,6 @@ class ImagenController extends Controller
               $filename = $image->getClientOriginalName();
               $image->move($destinationPath, $filename);
               $img->ruta = $filename;
-              $img->save();
     }
 }
 }

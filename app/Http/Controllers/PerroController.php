@@ -54,7 +54,12 @@ class PerroController extends Controller
         $filename = $image->getClientOriginalName();
         $img->ruta = $filename;
         $img->perro_id = $perro->id;
-        $img->save();
+        if ($img->ruta == $perro->img) {
+          $img->delete();
+        } else {
+          $img->save();
+        }
+
         $image->move( $destinationPath, $filename);
       }
     }

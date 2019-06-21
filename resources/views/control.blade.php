@@ -36,18 +36,9 @@
 
         <h4>Comentarios</h4>
         <p>{{$perro->comentarios}}</p>
-      <div class="datos-perro">
-        @if (is_array(json_decode($perro->img,true)) || is_object(json_decode($perro->img,true)))
-                  @foreach (json_decode($perro->img,true) as $img)
-                        <img src="{{asset('perrosimg/' . $img )}}" alt="">
-                  @endforeach
-        @endif
-          </div>
         </div>
-      </div>
+        @endforeach
     </div>
-  @endforeach
-  </div>
   </body>
 </html>
 @endauth

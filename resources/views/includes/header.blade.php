@@ -45,8 +45,7 @@
             {{ Auth::user()->name}}
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="">My Profile</a>
-            <a class="dropdown-item" href="{{route('control')}}">Pendientes</a>
+            <a class="dropdown-item" href="{{route('control')}}">Control</a>
             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit()">Logout</a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" >
               @csrf
@@ -60,20 +59,10 @@
         @if (Route::has('login'))
 
         @guest
-        <button type="button" class="btn btn-secondary "style="background-color:#E5E7E9;color:black;" name="button"><a href="">Dar en adopcion!</a> </button>
+        <button type="button" class="btn btn-secondary "style="background-color:#E5E7E9;color:black;" name="button"><a href="{{route('adopcion')}}">Dar en adopcion!</a> </button>
         @endguest
 
         @endif
-      <script>
-      // If user clicks anywhere outside of the modal, Modal will close
-
-      var modal = document.getElementById('modal-wrapper');
-      window.onclick = function(event) {
-          if (event.target == modal) {
-              modal.style.display = "none";
-          }
-      }
-      </script>
       </div>
     </div>
   </body>

@@ -38,6 +38,7 @@ body {
   height: 40px;
 }
 .main-title {
+  width: 25%;
   font-size: 80px;
   padding: 40px;
 }
@@ -108,8 +109,7 @@ body {
   display: block;
   margin: 0 auto;
   max-width: 100%;
-  width: 80%;
-  height: 200px;
+  max-height: 200px;
   border-radius: 3px;
 }
 .parte-izq {
@@ -138,4 +138,30 @@ body {
   border-color: black;
   border-radius: 3%;
   border-style: solid;
+}
+@media only screen and (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+  .novedades {
+    width: 100%;
+  }
+  .perros {
+    width: 100%;
+  }
+  .perro {
+    flex-direction: column;
+
+  }
+  .parte-izq {
+    margin-left:40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+  .parte-der {
+    width: 100%;
+  }
 }

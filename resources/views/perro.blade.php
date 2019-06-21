@@ -23,11 +23,26 @@
 <div class="all">
   <div class="izq">
     <div class="imagenes-perro">
-      @foreach ($imgs as $img)
-
-      <img src="{{ asset( 'perrosimg/' . $img->ruta)}}" class="imgs" alt="">
-
-      @endforeach
+      <div id="carouselExampleControls" class="carousel slide caru" data-ride="carousel" style="background-color:black;">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{{ asset( 'perrosimg/' . $perro->img)}}" class="img-c" alt="">
+          </div>
+          @foreach ($imgs as $img)
+          <div class="carousel-item">
+            <img src="{{ asset( 'perrosimg/' . $img->ruta)}}" class="img-c" alt="">
+          </div>
+          @endforeach
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
     </div>
     <div class="jeje">
       <div class="comentarios">
